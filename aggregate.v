@@ -788,6 +788,10 @@ f ( agg T ) = true -> g(T)=g(T'+U') where g(T')=\emptyset agg(T)=agg(U')=agg(g(T
 f ( agg T ) = false -> g(T) = \emptyset
 *)
 
+(* SMP proof *)
+(* pre-conditions are all on a small table of size <=2 *)
+(* we prove the correctness holds on all tables. *)
+
 Theorem final_groupby :
 forall (tuple_T aggr_T : Type) (agg : tuple_T->aggr_T->aggr_T) (initv : aggr_T)
 (f : aggr_T -> bool) (g : tuple_T -> bool) (table : table_T tuple_T),
